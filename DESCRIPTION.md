@@ -51,3 +51,19 @@ After reading through the challenge specification the task has been broken up in
   - [x] Document testing patterns (unit, integration, e2e)
   - [x] Document Pinia state management patterns
   - [x] Document Zod validation schema patterns
+
+---
+
+## 🏗️ Phase 2: Core Architecture & State Management
+
+### State Management Setup
+- [x] Set up Pinia for state management (standard Pinia with async/await actions)
+- [x] Create `stores/calculator.js` for:
+  - [x] Loan calculator state (amounts, selections, results)
+  - [x] API data (loan purposes, periods, terms)
+  - [x] Loading/error states
+
+### Write initial tests for Pinia store
+- [x] Test initial state values
+- [x] Test state updates through actions
+- [x] Test loading and error states

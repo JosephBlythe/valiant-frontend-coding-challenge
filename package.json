@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js,.vue src",
     "test:e2e": "cypress open",
     "test:unit": "vitest",
-    "test:integration": "vitest tests/unit/integration.spec.js"
+    "test:integration": "vitest tests/unit/integration.spec.js",
+    "test:store": "vitest tests/unit/store.spec.js"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",
