@@ -25,12 +25,12 @@ After reading through the challenge specification the task has been broken up in
   - [x] Verify Tailwind CSS v3+ installed (`npm list tailwindcss`) - 3.4.1
   - [x] Verify Node 20x installed (`node -v`) - v20.20.2, Added .nvmrc for version management
   - [x] Verify Npm 10x installed (`npm -v`) - 10.8.2
-- [ ] **Dependency Installation:**
+- [x] **Dependency Installation:**
   - [x] Install dependencies and verify project structure (`npm install`) - 30 vulnerabilities (4 low, 10 moderate, 13 high, 3 critical) - Address Later
-  - [ ] Install class-variance-authority (CVA) is installed for component variant support (`npm install class-variance-authority`)
-  - [ ] Install VueUse for core composables (`npm install @vueuse/core`)
-  - [ ] Install pinia for state management (`npm install pinia`)
-  - [ ] Install Zod for validation (`npm install zod`)
+  - [x] Install class-variance-authority (CVA) is installed for component variant support (`npm install class-variance-authority`)
+  - [x] Install VueUse for core composables (`npm install @vueuse/core`)
+  - [x] Install pinia for state management (`npm install pinia`)
+  - [x] Install Zod for validation (`npm install zod`)
 - [x] Start backend server (`npm run backend`), Port 5000 in use, hardcoded to 5001, Future use dotenv
 - [x] Start frontend server (`npm run dev`)
 
