@@ -134,4 +134,20 @@ After reading through the challenge specification the task has been broken up in
   - [x] BaseCard component (CVA variants: default, primary, secondary)
   - [x] BaseSkeleton component (animated pulse loader)
 
-
+### Components
+- [x] **LoanAmountInput** - text input with Zod validation (1,000 - 20,000,000)
+  - [x] Numeric-only validation via Zod schema
+  - [x] Min/max constraint enforcement via Zod
+  - [x] Display Zod validation error messages
+- [x] **LoanPurposeSelect** - dropdown with async options from API
+  - [x] Loading state handling (BaseSkeleton)
+  - [x] Zod validation for selected value
+- [x] **RepaymentPeriodSelect** - dropdown with async options from API
+  - [x] Zod validation for selected value
+- [x] **LoanTermSelect** - dropdown with async options from API
+  - [x] Zod validation for selected value
+- [x] **CalculationResults** - display calculated repayment per period and total
+  - [x] Handle negative PMT values (display as positive via Math.abs in useCalculateRepayment)
+- [x] **LoanCalculatorWidget** - main container component, composes all inputs together
+  - [x] Collect validated form data via Zod schema
+  - [x] Show validation errors from Zod
