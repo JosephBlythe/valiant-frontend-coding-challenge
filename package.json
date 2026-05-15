@@ -14,7 +14,8 @@
     "test:integration": "vitest tests/unit/integration.spec.js",
     "test:store": "vitest tests/unit/store.spec.js",
     "test:schema": "vitest tests/unit/schema.spec.js",
-    "test:useFormValidation": "vitest tests/unit/useFormValidation.spec.js"
+    "test:useFormValidation": "vitest tests/unit/useFormValidation.spec.js",
+    "test:useLoansAPI": "vitest tests/unit/useLoansAPI.spec.js"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",

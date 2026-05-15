@@ -93,7 +93,7 @@ After reading through the challenge specification the task has been broken up in
 - [x] Ensure all Zod schema tests pass
 
 ### Composables
-- [ ] Create `useLoansAPI.js` - fetch loan purposes, periods, and terms
+- [x] Create `useLoansAPI.js` - fetch loan purposes, periods, and terms
 - [ ] Create `useCalculateRepayment.js` - PMT calculation logic
 - [x] Create `useFormValidation.js` - input validation with Zod schema
 - [ ] Create `useLoanCalculator.js` - orchestrate calculator logic
@@ -105,14 +105,9 @@ After reading through the challenge specification the task has been broken up in
   - [x] Uses Zod schema for validation
   - [x] Returns validation errors from Zod
   - [x] Non-numeric input rejection
-- [ ] Test `useLoansAPI.js`:
-  - [ ] Successfully fetches loan purposes, periods, terms
-  - [ ] Handles API errors gracefully
-  - [ ] Returns data in expected format
-- [ ] Test store state management:
-  - [ ] State initializes correctly
-  - [ ] State updates properly when actions are called
-  - [ ] Multiple state changes don't interfere with each other
-- [ ] Ensure all composable and store tests pass
+- [x] Test `useLoansAPI.js`:
+  - [x] Successfully fetches loan purposes, periods, terms
+  - [x] Handles API errors gracefully
+  - [x] Returns data in expected format
 
 ---
