@@ -1,5 +1,4 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { setActivePinia, createPinia } from 'pinia'
 import { ref, computed, effectScope } from 'vue'
 import { useLoansAPI } from '@/composables/useLoansAPI'
 import { useLoanCalculator } from '@/composables/useLoanCalculator'
@@ -42,7 +41,6 @@ function makeApiMock ({
 
 describe('useLoanCalculator', () => {
   beforeEach(() => {
-    setActivePinia(createPinia())
     useLoansAPI.mockReturnValue(makeApiMock())
   })
 
@@ -104,6 +102,40 @@ describe('useLoanCalculator', () => {
       expect(typeof calc.updateField).toBe('function')
       expect(typeof calc.submitForm).toBe('function')
       expect(typeof calc.clearErrors).toBe('function')
+      scope.stop()
+    })
+  })
+
+  // ─── formData initial state ───────────────────────────────────────────────
+
+  describe('formData initial state', () => {
+    it('initializes loanAmount to 1000', () => {
+      const scope = effectScope()
+      let calc
+      scope.run(() => { calc = useLoanCalculator() })
+      expect(calc.formData.value.loanAmount).toBe(1000)
+      scope.stop()
+    })
+
+    it('initializes loanPurpose to null (before API data applied)', () => {
+      useLoansAPI.mockReturnValue(makeApiMock({ purposes: [] }))
+      const scope = effectScope()
+      let calc
+      scope.run(() => { calc = useLoanCalculator() })
+      expect(calc.formData.value.loanPurpose).toBeNull()
+      scope.stop()
+    })
+
+    it('each instance has independent state', () => {
+      const scope = effectScope()
+      let calc1, calc2
+      scope.run(() => {
+        calc1 = useLoanCalculator()
+        calc2 = useLoanCalculator()
+      })
+      calc1.updateField('loanAmount', 50000)
+      expect(calc1.formData.value.loanAmount).toBe(50000)
+      expect(calc2.formData.value.loanAmount).toBe(1000)
       scope.stop()
     })
   })
@@ -231,6 +263,14 @@ describe('useLoanCalculator', () => {
       expect(calc.formData.value.loanAmount).toBe(50000)
       scope.stop()
     })
+
+    it('updateField ignores unknown field names', () => {
+      const scope = effectScope()
+      let calc
+      scope.run(() => { calc = useLoanCalculator() })
+      expect(() => calc.updateField('unknownField', 'value')).not.toThrow()
+      scope.stop()
+    })
   })
 
   // ─── isFormComplete ───────────────────────────────────────────────────────
@@ -240,7 +280,7 @@ describe('useLoanCalculator', () => {
       const scope = effectScope()
       let calc
       scope.run(() => { calc = useLoanCalculator() })
-      // loanAmount=1000 (store default) + three API defaults → all present
+      // loanAmount=1000 + three API defaults → all present
       expect(calc.isFormComplete.value).toBe(true)
       scope.stop()
     })

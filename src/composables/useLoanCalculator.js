@@ -1,20 +1,16 @@
-import { computed } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useCalculatorStore } from '@/stores/calculator'
+import { ref, computed } from 'vue'
 import { useLoansAPI } from '@/composables/useLoansAPI'
 import { useCalculateRepayment } from '@/composables/useCalculateRepayment'
 import { useFormValidation } from '@/composables/useFormValidation'
 
-/**
- * Orchestrates the full loan calculator workflow.
- * All derived state (defaults, results) is purely computed — no watchers needed.
- * @param {string} [baseUrl] - API base URL (configurable for widget embedding)
- * @returns {object} Combined reactive state and actions
- */
-// TODO: Do we need custom baseURL should be in dotenv
+// TODO: baseUrl should come from dotenv
 export function useLoanCalculator (baseUrl = 'http://localhost:5001') {
-  const store = useCalculatorStore()
-  const { formData } = storeToRefs(store)
+  const formData = ref({
+    loanAmount: 1000,
+    loanPurpose: null,
+    repaymentPeriod: null,
+    loanTerm: null,
+  })
 
   const { loanPurposes, repaymentPeriods, loanTerms, loading, errors, isLoading } =
     useLoansAPI(baseUrl)
@@ -75,21 +71,13 @@ export function useLoanCalculator (baseUrl = 'http://localhost:5001') {
     })
   })
 
-  /**
-   * Update a single form field and validate it.
-   * Recalculation is automatic via the results computed.
-   * @param {string} field - Field name
-   * @param {*} value - New value
-   */
   const updateField = (field, value) => {
-    store.updateField(field, value)
+    if (field in formData.value) {
+      formData.value[field] = value
+    }
     validateField(field, value)
   }
 
-  /**
-   * Validate the entire effective form.
-   * @returns {{ valid: boolean, data: object|null, errors: object|null }}
-   */
   const submitForm = () => validateAll(effectiveFormData.value)
 
   return {

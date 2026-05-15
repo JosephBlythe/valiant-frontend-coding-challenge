@@ -27,7 +27,6 @@ After reading through the challenge specification the task has been broken up in
   - [x] Install dependencies and verify project structure (`npm install`) - 30 vulnerabilities (4 low, 10 moderate, 13 high, 3 critical) - Address Later
   - [x] Install class-variance-authority (CVA) is installed for component variant support (`npm install class-variance-authority`)
   - [x] Install VueUse for core composables (`npm install @vueuse/core`)
-  - [x] Install pinia for state management (`npm install pinia`)
   - [x] Install Zod for validation (`npm install zod`)
 - [x] Start backend server (`npm run backend`), Port 5000 in use, hardcoded to 5001, Future use dotenv
 - [x] Start frontend server (`npm run dev`)
@@ -53,18 +52,6 @@ After reading through the challenge specification the task has been broken up in
 ---
 
 ## 🏗️ Phase 2: Core Architecture & State Management
-
-### State Management Setup
-- [x] Set up Pinia for state management (standard Pinia with async/await actions)
-- [x] Create `stores/calculator.js` for:
-  - [x] Loan calculator state (amounts, selections, results)
-  - [x] API data (loan purposes, periods, terms)
-  - [x] Loading/error states
-
-### Write initial tests for Pinia store
-- [x] Test initial state values
-- [x] Test state updates through actions
-- [x] Test loading and error states
 
 ### Zod Schema Setup
 - [x] Create `schemas/calculator.ts` with Zod validation schema
@@ -94,7 +81,7 @@ After reading through the challenge specification the task has been broken up in
 - [x] Create `useLoansAPI.js` - fetch loan purposes, periods, and terms
 - [x] Create `useCalculateRepayment.js` - PMT calculation logic
 - [x] Create `useFormValidation.js` - input validation with Zod schema
-- [x] Create `useLoanCalculator.js` - orchestrate calculator logic
+- [x] Create `useLoanCalculator.js` - orchestrate calculator logic & state management
 
 ### Unit Tests for Composables
 - [x] Test `useFormValidation.js`:

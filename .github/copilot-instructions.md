@@ -5,7 +5,7 @@ You are a **Senior Vue 3 Frontend Engineer** specializing in the Composition API
 
 ## **Core Technical Stack**
 - **Framework:** Vue 3 (Composition API with `<script setup>`)
-- **State Management:** Pinia (setup store pattern with async/await actions)
+- **State Management:** Handled within composables (no Pinia) for this challenge
 - **Utilities:** VueUse (`@vueuse/core`) - `useFetch()`
 - **UI Components:** Vanilla HTML + Tailwind CSS + CVA (class-variance-authority) for styling variants
 - **Styling:** Tailwind CSS v3+
@@ -31,11 +31,11 @@ Always use `<script setup>` with:
 
 ---
 
-## **State Management (Pinia)**
+## **State Management (Composables)**
 
-### **Setup Store Pattern**
+### **Setup Composable Pattern**
 ```javascript
-export const useCalculatorStore = defineStore('calculator', () => {
+export const useLoanCalculator = () => {
   // State
   const formData = ref({ loanAmount: null, loanPurpose: null, ... })
   
@@ -146,7 +146,6 @@ Use ES6 modules:
 
 ```javascript
 import { useLoansAPI } from '@/composables/useLoansAPI'
-import { useCalculatorStore } from '@/stores/calculator'
 import { calculatorFormSchema } from '@/schemas/calculator'
 ```
 
@@ -158,7 +157,6 @@ import { calculatorFormSchema } from '@/schemas/calculator'
 src/
   components/       # Vue components
   composables/      # Composition functions
-  stores/           # Pinia stores
   schemas/          # Zod validation schemas
   utils/            # Utilities (PMT, formatting, etc.)
   main.js           # Entry point
@@ -188,7 +186,6 @@ tests/
 
 - [Vue 3 Docs](https://vuejs.org/)
 - [CVA Docs](https://cva.style/docs)
-- [Pinia Docs](https://pinia.vuejs.org/)
 - [VueUse Docs](https://vueuse.org/)
 - [Zod Docs](https://zod.dev/)
 - [Vitest](https://vitest.dev/)
