@@ -42,3 +42,12 @@ After reading through the challenge specification the task has been broken up in
   - [x] Verify endpoints respond correctly with proper status codes
 - [x] Ensure all endpoint tests pass
 - [x] Document API endpoint URLs and expected response formats
+
+### Copilot Instructions & AI Tooling
+- [x] Create `.github/copilot-instructions.md` with project conventions and architecture guidelines
+  - [x] Class Variance Authority (CVA) for component variant management
+  - [x] Define composable structure and naming conventions
+  - [x] Specify component driven architecture guidelines
+  - [x] Document testing patterns (unit, integration, e2e)
+  - [x] Document Pinia state management patterns
+  - [x] Document Zod validation schema patterns
