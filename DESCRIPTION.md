@@ -7,7 +7,7 @@ The calculator will integrate with backend endpoints and include comprehensive t
 
 ---
 
-After reading through the challenge specification the task has been broken up into seven phases:
+After reading through the challenge specification the task has been broken up into five phases:
 
 - 🚀 Phase 1: Project Setup & Verification
 - 🏗️ Phase 2: Core Architecture & State Management
