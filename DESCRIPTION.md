@@ -96,7 +96,7 @@ After reading through the challenge specification the task has been broken up in
 - [x] Create `useLoansAPI.js` - fetch loan purposes, periods, and terms
 - [x] Create `useCalculateRepayment.js` - PMT calculation logic
 - [x] Create `useFormValidation.js` - input validation with Zod schema
-- [ ] Create `useLoanCalculator.js` - orchestrate calculator logic
+- [x] Create `useLoanCalculator.js` - orchestrate calculator logic
 
 ### Unit Tests for Composables
 - [x] Test `useFormValidation.js`:
@@ -113,6 +113,10 @@ After reading through the challenge specification the task has been broken up in
   - [x] Correctly calculates monthly payment (PMT formula)
   - [x] Handles edge cases (zero interest, one month term)
   - [x] Returns results in expected format
-- [ ] Ensure all composable tests pass
+- [x] Test `useLoanCalculator.js`:
+  - [x] Orchestrates API calls and form validation correctly
+  - [x] Updates state based on API responses and validation results
+  - [x] Handles loading and error states appropriately
+- [x] Ensure all composable tests pass
 
 ---
