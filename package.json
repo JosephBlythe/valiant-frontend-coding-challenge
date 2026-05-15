@@ -12,7 +12,8 @@
     "test:e2e": "cypress open",
     "test:unit": "vitest",
     "test:integration": "vitest tests/unit/integration.spec.js",
-    "test:store": "vitest tests/unit/store.spec.js"
+    "test:store": "vitest tests/unit/store.spec.js",
+    "test:schema": "vitest tests/unit/schema.spec.js"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",

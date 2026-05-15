@@ -67,3 +67,27 @@ After reading through the challenge specification the task has been broken up in
 - [x] Test initial state values
 - [x] Test state updates through actions
 - [x] Test loading and error states
+
+### Zod Schema Setup
+- [x] Create `schemas/calculator.ts` with Zod validation schema
+  - [x] Define `loanAmountSchema` (1,000 - 20,000,000)
+  - [x] Define `loanPurposeSchema` (non-empty string)
+  - [x] Define `repaymentPeriodSchema` (non-empty string)
+  - [x] Define `loanTermSchema` (positive number)
+  - [x] Define `calculatorFormSchema` (combine all fields)
+- [x] Create utility function `validateFormInput()` using Zod
+- [x] Set up error message formatting for validation failures
+
+### Unit Tests for Zod Schemas
+- [x] Test `schemas/calculator.js`:
+  - [x] `loanAmountSchema` accepts valid amounts (1,000, 10,000, 20,000,000)
+  - [x] `loanAmountSchema` rejects invalid amounts (999, 20,000,001, -1)
+  - [x] `loanAmountSchema` rejects non-numeric input
+  - [x] `loanPurposeSchema` accepts non-empty strings
+  - [x] `loanPurposeSchema` rejects empty strings
+  - [x] `repaymentPeriodSchema` validates correctly
+  - [x] `loanTermSchema` accepts positive numbers
+  - [x] `calculatorFormSchema` validates complete form objects
+  - [x] `calculatorFormSchema` rejects incomplete objects
+  - [x] Error messages are clear and user-friendly
+- [x] Ensure all Zod schema tests pass
