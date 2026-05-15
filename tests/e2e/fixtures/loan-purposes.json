@@ -1,5 +1,5 @@
 [
-  { "value": "business", "label": "Business", "annualRate": 0.12 },
-  { "value": "vehicle", "label": "Vehicle", "annualRate": 0.08 },
-  { "value": "equipment", "label": "Equipment", "annualRate": 0.10 }
+  { "value": "general", "label": "Day-to-day capital", "annualRate": 0.1 },
+  { "value": "vehicle", "label": "Vehicle or transport", "annualRate": 0.045 },
+  { "value": "property", "label": "Financing a property", "annualRate": 0.029 }
 ]

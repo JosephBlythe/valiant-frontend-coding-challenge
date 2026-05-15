@@ -111,9 +111,9 @@ describe('Loan Calculator Widget', () => {
     })
 
     it('auto-selects the first option for each dropdown after APIs load', () => {
-      cy.getByTestId('loan-purpose-select').find('select').should('have.value', 'business')
-      cy.getByTestId('repayment-period-select').find('select').should('have.value', '12')
-      cy.getByTestId('loan-term-select').find('select').should('have.value', '12')
+      cy.getByTestId('loan-purpose-select').find('select').should('have.value', 'general')
+      cy.getByTestId('repayment-period-select').find('select').should('have.value', '52')
+      cy.getByTestId('loan-term-select').find('select').should('have.value', '6')
     })
 
     it('populates loan purpose options from the API', () => {
@@ -122,7 +122,7 @@ describe('Loan Calculator Widget', () => {
     })
 
     it('can select a different loan purpose', () => {
-      cy.getByTestId('loan-purpose-select').find('select').select('Vehicle')
+      cy.getByTestId('loan-purpose-select').find('select').select('Vehicle or transport')
       cy.getByTestId('loan-purpose-select').find('select').should('have.value', 'vehicle')
     })
 
@@ -188,7 +188,7 @@ describe('Loan Calculator Widget', () => {
       cy.getByTestId('loan-amount-field').blur()
 
       cy.getByTestId('period-label')
-        .should('contain.text', 'Monthly')
+        .should('contain.text', 'Weekly')
         .should('contain.text', 'Repayments')
     })
 
@@ -234,8 +234,8 @@ describe('Loan Calculator Widget', () => {
       cy.getByTestId('payment-per-period')
         .invoke('text')
         .then((initialPayment) => {
-          // Vehicle (8%) vs Business (12%) → lower payment
-          cy.getByTestId('loan-purpose-select').find('select').select('Vehicle')
+          // Vehicle or transport (4.5%) vs Day-to-day capital (10%) → lower payment
+          cy.getByTestId('loan-purpose-select').find('select').select('Vehicle or transport')
           cy.getByTestId('payment-per-period').invoke('text').should('not.eq', initialPayment)
         })
     })

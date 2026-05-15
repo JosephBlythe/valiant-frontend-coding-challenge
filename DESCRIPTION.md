@@ -141,9 +141,9 @@ After reading through the challenge specification the task has been broken up in
 
 ---
 
-- ✅ Phase 4: Integration, E2E Testing & QA Testing
+## ✅ Phase 4: Integration, E2E Testing & QA Testing
 
-  ## End-to-End Tests
+### End-to-End Tests
 - [x] Test user flow: Enter loan details → View calculated repayments
   - [x] User enters loan amount, selects purpose, period, and term
   - [x] System calculates and displays repayment per period
@@ -155,8 +155,21 @@ After reading through the challenge specification the task has been broken up in
   - [x] User-friendly error messages display (no validation errors shown after clamping)
 - [x] Ensure all e2e tests pass
 
-## Unit & Integration Tests
+### Unit & Integration Tests
 - [x] Ensure all unit tests for components, composables, and schemas pass
 - [x] Ensure all integration tests for API endpoints pass
 
+### Calculation Logic Verification
+- [x] Verify PMT calculation logic in `useCalculateRepayment.js` is correct
+- [x] Cross-check results with online PMT calculators for various input scenarios
+- [x] Ensure edge cases (zero interest, one month term) are handled correctly
+
 ---
+
+## 📦 Phase 5: Polish & Finalisation
+
+- [ ] Code cleanup and refactoring for readability and maintainability
+- [ ] Add comments and documentation where necessary
+- [ ] Create a new NOTES.md with any specific setup instructions, architecture overview, and testing guidelines
+- [ ] Ensure all tests pass and code coverage is sufficient
+- [ ] Prepare for submission (push to GitHub)

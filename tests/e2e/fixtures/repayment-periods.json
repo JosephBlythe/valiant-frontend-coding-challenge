@@ -1,5 +1,5 @@
 [
-  { "value": 12, "label": "Monthly" },
+  { "value": 52, "label": "Weekly" },
   { "value": 26, "label": "Fortnightly" },
-  { "value": 52, "label": "Weekly" }
+  { "value": 12, "label": "Monthly" }
 ]
