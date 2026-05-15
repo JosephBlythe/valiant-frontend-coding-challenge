@@ -34,3 +34,11 @@ After reading through the challenge specification the task has been broken up in
 - [x] Start backend server (`npm run backend`), Port 5000 in use, hardcoded to 5001, Future use dotenv
 - [x] Start frontend server (`npm run dev`)
 
+### Backend Endpoint Verification
+- [x] Write integration tests for backend endpoints
+  - [x] Test `GET /loan-purposes` returns array with annualRate
+  - [x] Test `GET /requested-repayment-periods` returns valid options
+  - [x] Test `GET /requested-term-months` returns valid options
+  - [x] Verify endpoints respond correctly with proper status codes
+- [x] Ensure all endpoint tests pass
+- [x] Document API endpoint URLs and expected response formats

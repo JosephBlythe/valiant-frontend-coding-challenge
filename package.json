@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue src",
     "test:e2e": "cypress open",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "test:integration": "vitest tests/unit/integration.spec.js"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",
