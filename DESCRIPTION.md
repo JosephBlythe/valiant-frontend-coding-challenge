@@ -12,10 +12,8 @@ After reading through the challenge specification the task has been broken up in
 - 🚀 Phase 1: Project Setup & Verification
 - 🏗️ Phase 2: Core Architecture & State Management
 - 🎨 Phase 3: Component Architecture
-- 🎯 Phase 4: Styling & UX
-- 🧮 Phase 5: Calculation & Business Logic
-- ✅ Phase 6: Integration, E2E Testing & QA Testing
-- 📦 Phase 7: Polish & Finalisation
+- ✅ Phase 4: Integration, E2E Testing & QA Testing
+- 📦 Phase 5: Polish & Finalisation
 
 ## 🚀 Phase 1: Project Setup & Foundation
 
@@ -120,3 +118,12 @@ After reading through the challenge specification the task has been broken up in
 - [x] Ensure all composable tests pass
 
 ---
+
+## 🎨 Phase 3: Component Architecture
+
+### Theming 
+- [x] Set up Tailwind CSS theming in config
+  - [x] Setup theme colours using bootstrap style names: primary (#fffea8), secondary (ghostwhite), danger, muted etc...
+- [x] Added cn utility for class variance management
+- [x] Add base layer styles
+
