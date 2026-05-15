@@ -127,3 +127,11 @@ After reading through the challenge specification the task has been broken up in
 - [x] Added cn utility for class variance management
 - [x] Add base layer styles
 
+### Base Components
+- [x] Write required base native HTML components:
+  - [x] BaseInput component (with numeric validation, CVA variants)
+  - [x] BaseSelect component (CVA variants, custom chevron)
+  - [x] BaseCard component (CVA variants: default, primary, secondary)
+  - [x] BaseSkeleton component (animated pulse loader)
+
+
