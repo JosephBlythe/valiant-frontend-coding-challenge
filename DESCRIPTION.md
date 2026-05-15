@@ -138,3 +138,25 @@ After reading through the challenge specification the task has been broken up in
 - [x] **LoanCalculatorWidget** - main container component, composes all inputs together
   - [x] Collect validated form data via Zod schema
   - [x] Show validation errors from Zod
+
+---
+
+- ✅ Phase 4: Integration, E2E Testing & QA Testing
+
+  ## End-to-End Tests
+- [x] Test user flow: Enter loan details → View calculated repayments
+  - [x] User enters loan amount, selects purpose, period, and term
+  - [x] System calculates and displays repayment per period
+  - [x] System displays total repayment over loan life
+- [x] Test various input combinations (different amounts, purposes, terms)
+- [x] Test error scenarios:
+  - [x] API failure handling (widget shows friendly error message and retry button; form is hidden)
+  - [x] Invalid input handling (< 1,000, > 20,000,000) (values are clamped to range on blur)
+  - [x] User-friendly error messages display (no validation errors shown after clamping)
+- [x] Ensure all e2e tests pass
+
+## Unit & Integration Tests
+- [x] Ensure all unit tests for components, composables, and schemas pass
+- [x] Ensure all integration tests for API endpoints pass
+
+---

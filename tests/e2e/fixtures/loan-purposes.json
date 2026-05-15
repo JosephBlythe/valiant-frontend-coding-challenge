@@ -1,0 +1,5 @@
+[
+  { "value": "business", "label": "Business", "annualRate": 0.12 },
+  { "value": "vehicle", "label": "Vehicle", "annualRate": 0.08 },
+  { "value": "equipment", "label": "Equipment", "annualRate": 0.10 }
+]
