@@ -23,11 +23,13 @@ nvm use
 npm install
 ```
 
+Copy `.env.example` to `.env.local` and adjust `VITE_API_BASE_URL` if your backend runs on a different port.
+
 ## 🏃‍♀️ Scripts
 
 ### Development
-- `npm run backend` – Start the backend server.
-- `npm run dev` – Start the development server.
+- `npm run backend` – Start the backend server (Port 5001).
+- `npm run dev` – Start the development server (Port 5173).
 - `npm run build` – Build for production.
 - `npm run preview` – Preview the production build.
 

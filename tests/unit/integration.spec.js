@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeAll } from 'vitest'
 import { spawn } from 'child_process'
 
-// TODO: Future improvement - Use dotenv to manage API base URL and other environment variables
-const API_BASE_URL = 'http://localhost:5001'
+const API_BASE_URL =
+  `${import.meta.env.VITE_API_HOST ?? 'http://localhost'}:${import.meta.env.VITE_API_PORT ?? '5001'}`
 
 let backendProcess = null
 

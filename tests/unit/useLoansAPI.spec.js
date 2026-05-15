@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { effectScope } from 'vue'
+import { useLoansAPI } from '@/composables/useLoansAPI'
 
-// Helper: flush microtasks + one macrotask tick so useFetch resolves
 const flushAll = () => new Promise((resolve) => setTimeout(resolve, 0))
 
 const mockJsonResponse = (data) =>
@@ -44,7 +44,6 @@ describe('useLoansAPI', () => {
   })
 
   it('returns refs for loanPurposes, repaymentPeriods, and loanTerms', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -57,8 +56,7 @@ describe('useLoansAPI', () => {
     scope.stop()
   })
 
-  it('returns loading, errors, and isLoading', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
+  it('returns loading, errors, and isLoading', () => {
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -70,7 +68,6 @@ describe('useLoansAPI', () => {
   })
 
   it('fetches from all three endpoints', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     const scope = effectScope()
     scope.run(() => { useLoansAPI('http://localhost:5001') })
 
@@ -84,7 +81,6 @@ describe('useLoansAPI', () => {
   })
 
   it('populates loanPurposes with fetched data', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -96,7 +92,6 @@ describe('useLoansAPI', () => {
   })
 
   it('populates repaymentPeriods with fetched data', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -108,7 +103,6 @@ describe('useLoansAPI', () => {
   })
 
   it('populates loanTerms with fetched data', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -120,7 +114,6 @@ describe('useLoansAPI', () => {
   })
 
   it('loanPurposes data is in expected format (label, value, annualRate)', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -136,7 +129,6 @@ describe('useLoansAPI', () => {
   })
 
   it('isLoading becomes false after data loads', async () => {
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })
@@ -151,9 +143,7 @@ describe('useLoansAPI', () => {
     vi.restoreAllMocks()
     vi.spyOn(globalThis, 'fetch').mockImplementation(mockErrorResponse)
 
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     const scope = effectScope()
-
     await expect(
       new Promise((resolve) => {
         scope.run(() => { useLoansAPI() })
@@ -168,7 +158,6 @@ describe('useLoansAPI', () => {
     vi.restoreAllMocks()
     vi.spyOn(globalThis, 'fetch').mockImplementation(mockErrorResponse)
 
-    const { useLoansAPI } = await import('@/composables/useLoansAPI')
     let api
     const scope = effectScope()
     scope.run(() => { api = useLoansAPI() })

@@ -2,6 +2,7 @@
 import { computed, nextTick, ref } from 'vue'
 import { useVModel } from '@vueuse/core'
 import BaseInput from '@/components/ui/BaseInput.vue'
+import { LOAN_AMOUNT_MIN, LOAN_AMOUNT_MAX } from '@/schemas/calculator'
 
 const props = defineProps({
   modelValue: { type: Number, default: null },
@@ -26,10 +27,10 @@ const onFocus = () => {
 
 const onBlur = () => {
   touched.value = true
-  if (model.value == null || isNaN(model.value) || model.value < 1000) {
-    model.value = 1000
-  } else if (model.value > 20000000) {
-    model.value = 20000000
+  if (model.value == null || isNaN(model.value) || model.value < LOAN_AMOUNT_MIN) {
+    model.value = LOAN_AMOUNT_MIN
+  } else if (model.value > LOAN_AMOUNT_MAX) {
+    model.value = LOAN_AMOUNT_MAX
   }
 }
 

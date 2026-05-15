@@ -1,9 +1,15 @@
 import { defineConfig } from 'cypress'
+import { loadEnv } from 'vite'
 import vitePreprocessor from 'cypress-vite'
+
+const env = loadEnv('', process.cwd(), '')
+
+const appHost = env.VITE_APP_HOST ?? 'http://localhost'
+const appPort = env.VITE_APP_PORT ?? '5173'
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:5173',
+    baseUrl: `${appHost}:${appPort}`,
     setupNodeEvents (on) {
       on('file:preprocessor', vitePreprocessor())
     },

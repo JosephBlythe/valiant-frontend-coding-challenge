@@ -168,8 +168,7 @@ After reading through the challenge specification the task has been broken up in
 
 ## 📦 Phase 5: Polish & Finalisation
 
-- [ ] Code cleanup and refactoring for readability and maintainability
-- [ ] Add comments and documentation where necessary
-- [ ] Create a new NOTES.md with any specific setup instructions, architecture overview, and testing guidelines
-- [ ] Ensure all tests pass and code coverage is sufficient
-- [ ] Prepare for submission (push to GitHub)
+- [x] Code cleanup and refactoring for readability and maintainability
+- [x] Add comments and documentation where necessary
+- [x] Create a new NOTES.md with any specific setup instructions, architecture overview, and testing guidelines
+- [x] Ensure all tests pass and code coverage is sufficient

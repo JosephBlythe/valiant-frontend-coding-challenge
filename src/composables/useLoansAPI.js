@@ -1,7 +1,8 @@
 import { computed } from 'vue'
 import { useFetch } from '@vueuse/core'
 
-const DEFAULT_BASE_URL = 'http://localhost:5001'
+const DEFAULT_BASE_URL =
+  `${import.meta.env.VITE_API_HOST ?? 'http://localhost'}:${import.meta.env.VITE_API_PORT ?? '5001'}`
 
 /**
  * Fetches all loan related option lists from the backend.

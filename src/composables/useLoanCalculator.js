@@ -3,8 +3,9 @@ import { useLoansAPI } from '@/composables/useLoansAPI'
 import { useCalculateRepayment } from '@/composables/useCalculateRepayment'
 import { useFormValidation } from '@/composables/useFormValidation'
 
-// TODO: baseUrl should come from dotenv
-export function useLoanCalculator (baseUrl = 'http://localhost:5001') {
+export function useLoanCalculator (
+  baseUrl = `${import.meta.env.VITE_API_HOST ?? 'http://localhost'}:${import.meta.env.VITE_API_PORT ?? '5001'}`
+) {
   const formData = ref({
     loanAmount: 1000,
     loanPurpose: null,
